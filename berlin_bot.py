@@ -72,15 +72,15 @@ class BerlinBot:
         time.sleep(5)
 
         # extend stay
-        driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[2]/label/p').click()
+        driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[1]/label/p').click()
         time.sleep(2)
 
         # click on study group
-        driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[1]/label/p').click()
+        driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[2]/label/p').click()
         time.sleep(2)
 
         # b/c of stufy
-        driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[2]/div/div[5]/label').click()
+        driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[2]/div/div[9]/label').click()
         time.sleep(4)
 
         # submit form
