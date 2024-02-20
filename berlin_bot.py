@@ -2,6 +2,8 @@ import time
 import os
 import logging
 from platform import system
+from playsound import playsound
+
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -130,25 +132,25 @@ class BerlinBot:
         http://stackoverflow.com/a/34568298/901641
         I never would have tried using AppKit.NSSound without seeing his code.
         """
-        from AppKit import NSSound
-        from Foundation import NSURL
+        #from AppKit import NSSound
+        #from Foundation import NSURL
         from time import sleep
 
         logging.info("Play sound")
-        if "://" not in sound:
-            if not sound.startswith("/"):
-                from os import getcwd
+        #if "://" not in sound:
+            #if not sound.startswith("/"):
+                #from os import getcwd
 
-                sound = getcwd() + "/" + sound
-            sound = "file://" + sound
-        url = NSURL.URLWithString_(sound)
-        nssound = NSSound.alloc().initWithContentsOfURL_byReference_(url, True)
-        if not nssound:
-            raise IOError("Unable to load sound named: " + sound)
-        nssound.play()
+                #sound = getcwd() + "/" + sound
+            #sound = "file://" + sound
+        #url = NSURL.URLWithString_(sound)
+        #nssound = NSSound.alloc().initWithContentsOfURL_byReference_(url, True)
+        playsound('alarm.wav')
+        #if not nssound:
+            #raise IOError("Unable to load sound named: " + sound)
 
         if block:
-            sleep(nssound.duration())
+            sleep(6)
 
 if __name__ == "__main__":
     BerlinBot().run_loop()
