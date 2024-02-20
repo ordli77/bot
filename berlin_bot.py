@@ -71,15 +71,15 @@ class BerlinBot:
         s.select_by_visible_text("nein")
         time.sleep(5)
 
-        # extend stay
+        # first apply
         driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[1]/label/p').click()
         time.sleep(2)
 
-        # click on study group
+        # click on work 
         driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[2]/label/p').click()
         time.sleep(2)
 
-        # b/c of stufy
+        # freelancer job
         driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[2]/div/div[9]/label').click()
         time.sleep(4)
 
