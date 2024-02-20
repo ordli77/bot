@@ -78,11 +78,11 @@ class BerlinBot:
         time.sleep(2)
 
         # click on work 
-        driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[3]/label/p').click()
+        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p').click()
         time.sleep(2)
 
         # freelancer job
-        driver.find_element(By.XPATH, '//*[@id="inner-479-0-2"]/div/div[4]/div/div[9]/label').click()
+        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[4]/div/div[9]/label').click()
         time.sleep(4)
 
         # submit form
