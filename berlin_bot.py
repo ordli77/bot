@@ -55,12 +55,12 @@ class BerlinBot:
         driver.find_element(By.XPATH, '//*[@id="xi-div-1"]/div[4]/label[2]/p').click()
         time.sleep(2)
         driver.find_element(By.ID, 'applicationForm:managedForm:proceed').click()
-        time.sleep(10)
+        time.sleep(6)
     @staticmethod
     def enter_form(driver: webdriver.Chrome):
         logging.info("Fill out form")
         # select china
-        time.sleep(2)
+        time.sleep(8)
         s = Select(driver.find_element(By.ID, 'xi-sel-400'))
         s.select_by_visible_text("China")
         time.sleep(2)
