@@ -60,6 +60,7 @@ class BerlinBot:
     def enter_form(driver: webdriver.Chrome):
         logging.info("Fill out form")
         # select china
+        time.sleep(2)
         s = Select(driver.find_element(By.ID, 'xi-sel-400'))
         s.select_by_visible_text("China")
         time.sleep(2)
