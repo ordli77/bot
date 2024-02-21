@@ -43,14 +43,12 @@ class BerlinBot:
         self.wait_time = 20
         self._sound_file = os.path.join(os.getcwd(), "alarm.wav")
         self._error_message = """Für die gewählte Dienstleistung sind aktuell keine Termine frei! Bitte"""
-
     @staticmethod
     def enter_start_page(driver: webdriver.Chrome):
         logging.info("Visit start page")
         driver.get("https://otv.verwalt-berlin.de/ams/TerminBuchen")
         driver.find_element(By.XPATH, '//*[@id="mainForm"]/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[2]/a').click()
         time.sleep(5)
-
     @staticmethod
     def tick_off_some_bullshit(driver: webdriver.Chrome):
         logging.info("Ticking off agreement")
@@ -58,7 +56,6 @@ class BerlinBot:
         time.sleep(1)
         driver.find_element(By.ID, 'applicationForm:managedForm:proceed').click()
         time.sleep(5)
-
     @staticmethod
     def enter_form(driver: webdriver.Chrome):
         logging.info("Fill out form")
@@ -72,21 +69,18 @@ class BerlinBot:
         s = Select(driver.find_element(By.ID, 'xi-sel-427' ))
         s.select_by_visible_text("nein")
         time.sleep(5)
-
         # first apply
-       
         driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[1]/label/p').click()
-        
         time.sleep(2)
+
         # click on work 
-      
+
         driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p').click()
-                                                                    
-        
         time.sleep(2)
-        
+
         # freelancer job
-        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]/div/div[4]/div/div[9]/label').click()
+  
+        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[4]/div/div[9]/label').click()
         time.sleep(4)
       
         # submit form
