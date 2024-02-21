@@ -55,7 +55,7 @@ class BerlinBot:
         driver.find_element(By.XPATH, '//*[@id="xi-div-1"]/div[4]/label[2]/p').click()
         time.sleep(2)
         driver.find_element(By.ID, 'applicationForm:managedForm:proceed').click()
-        time.sleep(5)
+        time.sleep(10)
     @staticmethod
     def enter_form(driver: webdriver.Chrome):
         logging.info("Fill out form")
