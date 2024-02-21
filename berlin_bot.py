@@ -48,6 +48,7 @@ class BerlinBot:
     def enter_start_page(driver: webdriver.Chrome):
         logging.info("Visit start page")
         driver.get("https://otv.verwalt-berlin.de/ams/TerminBuchen")
+        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
         driver.find_element(By.XPATH, '//*[@id="mainForm"]/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[2]/a').click()
         time.sleep(5)
 
@@ -76,15 +77,15 @@ class BerlinBot:
         # first apply
         driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[1]/label/p').click()
         time.sleep(2)
-
+        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
         # click on work 
         driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p').click()
         time.sleep(2)
-
+        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
         # freelancer job
         driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[4]/div/div[9]/label').click()
         time.sleep(4)
-
+        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
         # submit form
         driver.find_element(By.ID, 'applicationForm:managedForm:proceed').click()
         time.sleep(10)
