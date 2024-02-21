@@ -80,11 +80,11 @@ class BerlinBot:
         # click on work 
         #driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p').click()
                                                                     
-        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p'))).click()
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]/div/div[3]/label/p'))).click()
         time.sleep(2)
         
         # freelancer job
-        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[4]/div/div[9]/label').click()
+        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]/div/div[4]/div/div[9]/label').click()
         time.sleep(4)
       
         # submit form
