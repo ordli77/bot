@@ -4,12 +4,12 @@ import logging
 from platform import system
 from playsound import playsound
 
-
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-
+from selenium.webdriver.support import expected_conditions as EC
 
 system = system()
 
@@ -75,17 +75,19 @@ class BerlinBot:
         time.sleep(5)
 
         # first apply
-        driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[1]/label/p').click()
+        #driver.find_element(By.XPATH, '//*[@id="xi-div-30"]/div[1]/label/p').click()
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//*[@id="xi-div-30"]/div[1]/label/p'))).click()
         time.sleep(2)
-        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
         # click on work 
-        driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p').click()
+        #driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p').click()
+                                                                    
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[3]/label/p'))).click()
         time.sleep(2)
-        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
+        
         # freelancer job
         driver.find_element(By.XPATH, '//html/body/div[2]/div[2]/div[4]/div[2]/form/div[2]/div/div[2]/div[8]/div[2]/div[2]/div[1]/fieldset/div[8]/div[1]/div[1]/div[1]/div[8]//div/div[4]/div/div[9]/label').click()
         time.sleep(4)
-        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
+      
         # submit form
         driver.find_element(By.ID, 'applicationForm:managedForm:proceed').click()
         time.sleep(10)
