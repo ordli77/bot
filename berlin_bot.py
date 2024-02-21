@@ -48,7 +48,6 @@ class BerlinBot:
     def enter_start_page(driver: webdriver.Chrome):
         logging.info("Visit start page")
         driver.get("https://otv.verwalt-berlin.de/ams/TerminBuchen")
-        driver.manage().timeouts().implicitlyWait(Time, TimeUnit.SECONDS)
         driver.find_element(By.XPATH, '//*[@id="mainForm"]/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div[2]/a').click()
         time.sleep(5)
 
