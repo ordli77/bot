@@ -53,7 +53,7 @@ class BerlinBot:
     def tick_off_some_bullshit(driver: webdriver.Chrome):
         logging.info("Ticking off agreement")
         driver.find_element(By.XPATH, '//*[@id="xi-div-1"]/div[4]/label[2]/p').click()
-        time.sleep(1)
+        time.sleep(2)
         driver.find_element(By.ID, 'applicationForm:managedForm:proceed').click()
         time.sleep(5)
     @staticmethod
@@ -62,10 +62,12 @@ class BerlinBot:
         # select china
         s = Select(driver.find_element(By.ID, 'xi-sel-400'))
         s.select_by_visible_text("China")
+        time.sleep(2)
         # eine person
         s = Select(driver.find_element(By.ID, 'xi-sel-422'))
         s.select_by_visible_text("eine Person")
         # no family
+        time.sleep(2)
         s = Select(driver.find_element(By.ID, 'xi-sel-427' ))
         s.select_by_visible_text("nein")
         time.sleep(5)
