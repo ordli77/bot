@@ -146,8 +146,8 @@ class BerlinBot:
             #sound = "file://" + sound
         #url = NSURL.URLWithString_(sound)
         #nssound = NSSound.alloc().initWithContentsOfURL_byReference_(url, True)
-        sounds = os.path.dirname(__file__) + "\\" + "alarm.wav"
-        playsound(sounds)
+        
+        playsound('.\\alarm.wav')
         #if not nssound:
             #raise IOError("Unable to load sound named: " + sound)
 
